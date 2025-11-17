@@ -34,8 +34,8 @@
 - Keep optional metadata placeholders ready for later editing.
 
 ## 5. UI Architecture (App Router)
-- `app/layout.tsx`: global providers, fonts, theme vars.
-- `app/page.tsx`: fetch recipe list (static) and render sections.
+- `src/app/layout.tsx`: global providers, fonts, theme vars.
+- `src/app/page.tsx`: fetch recipe list (static) and render sections.
 - Components:
   - `HeroNowCooking`
   - `TagFilterRail`

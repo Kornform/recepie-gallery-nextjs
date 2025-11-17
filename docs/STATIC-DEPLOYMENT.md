@@ -18,7 +18,7 @@ This guide explains how to convert the Recipe Gallery Next.js application from a
 
 ## What Needs to Change
 
-The main issue is in `app/src/data/recipes.ts` which uses Node.js filesystem APIs:
+The main issue is in `src/data/recipes.ts` which uses Node.js filesystem APIs:
 
 ```typescript
 // Current (Server-Side)
@@ -37,7 +37,7 @@ import recipesData from "./recipes.json"; // ✅ Works in static builds
 
 ### Step 1: Create a Build Script
 
-Create a new file `app/scripts/generate-recipes.js`:
+Create a new file `scripts/generate-recipes.js`:
 
 ```javascript
 const fs = require('fs');
@@ -132,7 +132,7 @@ console.log(`✅ Generated ${recipes.length} recipes → ${outputFile}`);
 
 ### Step 2: Update package.json
 
-Add the script to `app/package.json`:
+Add the script to `package.json`:
 
 ```json
 {
@@ -151,7 +151,7 @@ The `prebuild` script automatically runs before `build`, ensuring recipes are al
 
 ### Step 3: Update next.config.ts
 
-Enable static export in `app/next.config.ts`:
+Enable static export in `next.config.ts`:
 
 ```typescript
 import type { NextConfig } from "next";
@@ -170,7 +170,7 @@ export default nextConfig;
 
 ### Step 4: Replace recipes.ts
 
-Replace the content of `app/src/data/recipes.ts`:
+Replace the content of `src/data/recipes.ts`:
 
 ```typescript
 import type { RecipeMeta } from "@/types/recipes";
@@ -186,11 +186,10 @@ export const getRecipes = (): RecipeMeta[] => {
 Run the generation script once:
 
 ```bash
-cd app
 npm run generate-recipes
 ```
 
-This creates `app/src/data/recipes.json` with all your recipe data.
+This creates `src/data/recipes.json` with all your recipe data.
 
 ### Step 6: Update .gitignore (Optional)
 
@@ -206,14 +205,13 @@ Or keep it in git if you want to commit the generated data.
 ### Step 7: Test the Static Build
 
 ```bash
-cd app
 npm run build
 ```
 
 This will:
 1. Run `generate-recipes.js` (via `prebuild`)
 2. Build the app as static files
-3. Output to `app/out/` directory
+3. Output to `out/` directory
 
 ### Step 8: Test Locally
 
@@ -239,7 +237,6 @@ Visit `http://localhost:8000` (or the port shown) to verify everything works.
 
 1. Build the static site:
    ```bash
-   cd app
    npm run build
    ```
 
@@ -247,10 +244,9 @@ Visit `http://localhost:8000` (or the port shown) to verify everything works.
 
 3. Deploy to GitHub Pages:
    ```bash
-   # From the app directory
    git add out -f  # Force add if out/ is in .gitignore
    git commit -m "Deploy to GitHub Pages"
-   git subtree push --prefix app/out origin gh-pages
+   git subtree push --prefix out origin gh-pages
    ```
 
 4. Enable GitHub Pages in repository settings → Pages → Source: gh-pages branch
@@ -259,7 +255,6 @@ Visit `http://localhost:8000` (or the port shown) to verify everything works.
 
 1. Build the app:
    ```bash
-   cd app
    npm run build
    ```
 
@@ -273,36 +268,35 @@ Or use Netlify's web interface:
 - Drag and drop the `out/` folder
 
 Build settings for Netlify:
-- **Base directory**: `app`
+- **Base directory**: `.` (root)
 - **Build command**: `npm run build`
-- **Publish directory**: `app/out`
+- **Publish directory**: `out`
 
 ### Option 3: Vercel (Static)
 
 Even though Vercel supports Node.js, you can deploy as static:
 
 ```bash
-cd app
 npm run build
 vercel --prod ./out
 ```
 
 Or via Vercel dashboard with these settings:
 - **Framework Preset**: Next.js
-- **Root Directory**: `app`
+- **Root Directory**: `.` (root)
 - **Build Command**: `npm run build`
 - **Output Directory**: `out`
 
 ### Option 4: Your Own Server
 
-Simply upload the contents of `app/out/` to any web server:
+Simply upload the contents of `out/` to any web server:
 
 ```bash
 # Using SCP
-scp -r app/out/* user@yourserver.com:/var/www/html/
+scp -r out/* user@yourserver.com:/var/www/html/
 
 # Using RSYNC
-rsync -avz app/out/ user@yourserver.com:/var/www/html/
+rsync -avz out/ user@yourserver.com:/var/www/html/
 ```
 
 Configure your web server (Apache, Nginx, etc.) to serve the files.
@@ -355,7 +349,6 @@ When you add new recipe images to `public/recipes/`:
 
 1. Regenerate the recipes data:
    ```bash
-   cd app
    npm run generate-recipes
    ```
 
@@ -377,7 +370,7 @@ name: Deploy Static Site
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -391,20 +384,16 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: |
-          cd app
-          npm ci
+        run: npm ci
 
       - name: Build static site
-        run: |
-          cd app
-          npm run build
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./app/out
+          publish_dir: ./out
 ```
 
 ## Limitations of Static Export
@@ -489,7 +478,7 @@ The only extra step is running `npm run generate-recipes` when adding new recipe
 
 ```bash
 # 1. Create the build script
-mkdir -p app/scripts
+mkdir -p scripts
 # (Copy generate-recipes.js from Step 1)
 
 # 2. Update package.json scripts
@@ -502,7 +491,6 @@ mkdir -p app/scripts
 # (Use static import version)
 
 # 5. Generate and build
-cd app
 npm run generate-recipes
 npm run build
 

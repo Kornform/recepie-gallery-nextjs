@@ -19,13 +19,7 @@ git clone https://github.com/Kornform/recepie-gallery-nextjs.git
 cd recepie-gallery-nextjs
 ```
 
-### 2. Navigate to the App Directory
-
-```bash
-cd app
-```
-
-### 3. Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
@@ -81,9 +75,9 @@ Vercel is the recommended platform for Next.js applications as it's made by the 
 4. Import the `recepie-gallery-nextjs` repository
 5. Configure the project:
    - **Framework Preset**: Next.js
-   - **Root Directory**: `app`
+   - **Root Directory**: `.` (root)
    - **Build Command**: `npm run build`
-   - **Output Directory**: `.next`
+   - **Output Directory**: `out`
 6. Click "Deploy"
 
 #### Deploy via Vercel CLI
@@ -91,9 +85,6 @@ Vercel is the recommended platform for Next.js applications as it's made by the 
 ```bash
 # Install Vercel CLI
 npm i -g vercel
-
-# Navigate to app directory
-cd app
 
 # Deploy
 vercel
@@ -105,35 +96,29 @@ vercel
 2. Sign in and click "Add new site"
 3. Import from GitHub
 4. Configure build settings:
-   - **Base directory**: `app`
+   - **Base directory**: `.` (root)
    - **Build command**: `npm run build`
-   - **Publish directory**: `.next`
+   - **Publish directory**: `out`
 5. Click "Deploy site"
 
 ### Option 3: Deploy to Custom Server
 
 1. Build the application:
    ```bash
-   cd app
    npm run build
    ```
 
-2. Copy the following to your server:
-   - `.next` folder
-   - `public` folder
-   - `package.json`
-   - `package-lock.json`
-   - `next.config.ts`
-
-3. On your server, install dependencies and start:
+2. Copy only the `out` folder to your server:
    ```bash
-   npm install --production
-   npm start
+   scp -r out/* user@server:/var/www/html/
    ```
 
-### Option 4: Docker Deployment
+3. Configure your web server (Apache/Nginx) to serve the files.
+   No Node.js needed on the server!
 
-Create a `Dockerfile` in the `app` directory:
+### Option 4: Docker Deployment (Not Recommended for Static Export)
+
+If you still want to use Docker, create a `Dockerfile` in the root directory:
 
 ```dockerfile
 FROM node:18-alpine AS base
@@ -185,7 +170,7 @@ docker run -p 3000:3000 recipe-gallery
 
 ## Environment Variables
 
-If you add environment variables in the future, create a `.env.local` file in the `app` directory:
+If you add environment variables in the future, create a `.env.local` file in the root directory:
 
 ```bash
 # Example environment variables
@@ -232,7 +217,7 @@ Simply push to your GitHub repository:
 ```bash
 git add .
 git commit -m "Your update message"
-git push origin master
+git push origin main
 ```
 
 The platform will automatically rebuild and redeploy.
@@ -241,14 +226,13 @@ The platform will automatically rebuild and redeploy.
 
 1. Pull the latest changes
 2. Rebuild the application
-3. Restart the server
+3. Upload the new `out` folder
 
 ```bash
-git pull origin master
-cd app
+git pull origin main
 npm install
 npm run build
-# Restart your process manager (PM2, systemd, etc.)
+scp -r out/* user@server:/var/www/html/
 ```
 
 ## Support

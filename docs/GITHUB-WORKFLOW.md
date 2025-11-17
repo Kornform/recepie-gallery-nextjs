@@ -5,7 +5,7 @@ This guide describes how to push your local changes to the GitHub repository as 
 ## Repository Information
 
 - **Repository URL**: https://github.com/Kornform/recepie-gallery-nextjs
-- **Default Branch**: master
+- **Default Branch**: main
 
 ## Quick Reference - Push Changes to GitHub
 
@@ -20,7 +20,7 @@ git add .
 git commit -m "Your descriptive commit message here"
 
 # 4. Push to GitHub
-git push origin master
+git push origin main
 ```
 
 ## Detailed Step-by-Step Guide
@@ -59,7 +59,7 @@ git add file1.tsx file2.tsx file3.css
 #### Stage All Files of a Certain Type
 ```bash
 git add *.tsx          # All TypeScript React files
-git add app/src/**/*.tsx  # All .tsx files in app/src and subdirectories
+git add src/**/*.tsx  # All .tsx files in src and subdirectories
 ```
 
 ### Step 3: Commit Your Changes
@@ -88,7 +88,7 @@ git commit -m "Add new recipe filtering feature"
 Push your commits to the remote repository:
 
 ```bash
-git push origin master
+git push origin main
 ```
 
 If you're on a different branch:
@@ -105,7 +105,7 @@ git push origin branch-name
 git status                              # See what changed
 git add .                               # Stage everything
 git commit -m "End of day: [brief description of what you worked on]"
-git push origin master                  # Push to GitHub
+git push origin main                    # Push to GitHub
 ```
 
 ### Feature Development Workflow
@@ -115,7 +115,7 @@ git push origin master                  # Push to GitHub
 git status                              # Review changes
 git add .                               # Stage all changes
 git commit -m "Add [feature name]: [brief description]"
-git push origin master                  # Push to GitHub
+git push origin main                    # Push to GitHub
 ```
 
 ### Before Taking a Break Workflow
@@ -124,7 +124,7 @@ git push origin master                  # Push to GitHub
 # Quick save before lunch/break
 git add .
 git commit -m "WIP: [what you're working on]"
-git push origin master
+git push origin main
 ```
 
 Note: "WIP" means "Work In Progress"
@@ -150,7 +150,7 @@ If you work from multiple computers or collaborate with others:
 
 ```bash
 # Get latest changes from GitHub
-git pull origin master
+git pull origin main
 ```
 
 Always pull before starting work if you use multiple machines!
@@ -165,20 +165,20 @@ This means there are no changes to push. All your files match what's on GitHub.
 git status  # Verify no changes
 ```
 
-### Issue: "Your branch is ahead of 'origin/master' by X commits"
+### Issue: "Your branch is ahead of 'origin/main' by X commits"
 
 You have local commits that aren't on GitHub yet. Push them:
 
 ```bash
-git push origin master
+git push origin main
 ```
 
-### Issue: "Your branch is behind 'origin/master'"
+### Issue: "Your branch is behind 'origin/main'"
 
 GitHub has changes you don't have locally. Pull them first:
 
 ```bash
-git pull origin master
+git pull origin main
 ```
 
 ### Issue: Merge Conflicts
@@ -190,7 +190,7 @@ If you get a merge conflict after pulling:
 3. Edit the file to resolve conflicts
 4. Stage the resolved files: `git add filename`
 5. Commit: `git commit -m "Resolve merge conflict"`
-6. Push: `git push origin master`
+6. Push: `git push origin main`
 
 ### Issue: Forgot to Add a File
 
@@ -242,18 +242,22 @@ git diff    # Review actual changes
 The `.gitignore` file prevents certain files from being tracked:
 
 ```
-# Already configured in app/.gitignore
+# Already configured in .gitignore
 node_modules/
 .next/
+out/
 .env.local
 .DS_Store
+.claude/
+certificates/
 ```
 
 Never commit:
 - `node_modules/` (dependencies)
 - `.env.local` (secrets)
-- `.next/` (build output)
-- Personal IDE settings
+- `.next/` and `out/` (build output)
+- Personal IDE settings (`.claude/`)
+- `certificates/` (local certificates)
 
 ## Quick Command Reference
 
@@ -263,8 +267,8 @@ Never commit:
 | `git add .` | Stage all changes |
 | `git add <file>` | Stage specific file |
 | `git commit -m "message"` | Commit staged changes |
-| `git push origin master` | Push to GitHub |
-| `git pull origin master` | Get latest from GitHub |
+| `git push origin main` | Push to GitHub |
+| `git pull origin main` | Get latest from GitHub |
 | `git log` | View commit history |
 | `git diff` | See unstaged changes |
 | `git diff --staged` | See staged changes |
@@ -297,7 +301,7 @@ git config --global alias.ps push
 # Now you can use:
 git st   # instead of git status
 git cm -m "message"  # instead of git commit -m "message"
-git ps origin master # instead of git push origin master
+git ps origin main # instead of git push origin main
 ```
 
 ## Emergency: "I Messed Up Everything!"
@@ -307,7 +311,7 @@ If you really messed up and want to reset to what's on GitHub:
 ```bash
 # WARNING: This discards ALL local changes!
 git fetch origin
-git reset --hard origin/master
+git reset --hard origin/main
 ```
 
 **Only use this if you're absolutely sure you want to lose all local changes!**
@@ -333,7 +337,7 @@ The most common workflow you'll use daily:
 git status                    # Check what changed
 git add .                     # Stage changes
 git commit -m "Descriptive message"  # Commit
-git push origin master        # Push to GitHub (backup!)
+git push origin main          # Push to GitHub (backup!)
 ```
 
 That's it! These four commands will handle 90% of your GitHub workflow needs.

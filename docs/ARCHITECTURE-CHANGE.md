@@ -40,8 +40,8 @@ The application was converted from a **server-side Next.js app** to a **static e
 ```
 
 **Key Files:**
-- `app/src/data/recipes.ts` - Used Node.js `fs` module
-- `app/next.config.ts` - Standard Next.js config
+- `src/data/recipes.ts` - Used Node.js `fs` module
+- `next.config.ts` - Standard Next.js config
 - Output: `.next/` folder requiring Node.js runtime
 
 ### After: Static Export
@@ -82,28 +82,28 @@ The application was converted from a **server-side Next.js app** to a **static e
 ```
 
 **Key Files:**
-- `app/scripts/generate-recipes.js` - NEW: Generates JSON at build time
-- `app/src/data/recipes.json` - NEW: Static recipe data
-- `app/src/data/recipes.ts` - MODIFIED: Imports JSON instead of using `fs`
-- `app/next.config.ts` - MODIFIED: Enabled `output: 'export'`
-- `app/package.json` - MODIFIED: Added `prebuild` script
+- `scripts/generate-recipes.js` - NEW: Generates JSON at build time
+- `src/data/recipes.json` - NEW: Static recipe data
+- `src/data/recipes.ts` - MODIFIED: Imports JSON instead of using `fs`
+- `next.config.ts` - MODIFIED: Enabled `output: 'export'`
+- `package.json` - MODIFIED: Added `prebuild` script
 - Output: `out/` folder with pure static files
 
 ## Technical Details
 
 ### File Changes
 
-#### 1. New Build Script: `app/scripts/generate-recipes.js`
+#### 1. New Build Script: `scripts/generate-recipes.js`
 
 ```javascript
 // Scans public/recipes/ folder
-// Generates app/src/data/recipes.json
+// Generates src/data/recipes.json
 // Runs automatically before build (via prebuild script)
 ```
 
 **Purpose:** Move filesystem scanning from runtime to build time
 
-#### 2. Modified: `app/src/data/recipes.ts`
+#### 2. Modified: `src/data/recipes.ts`
 
 **Before:**
 ```typescript
@@ -128,7 +128,7 @@ export const getRecipes = (): RecipeMeta[] => {
 };
 ```
 
-#### 3. Modified: `app/next.config.ts`
+#### 3. Modified: `next.config.ts`
 
 **Before:**
 ```typescript
@@ -147,7 +147,7 @@ const nextConfig: NextConfig = {
 };
 ```
 
-#### 4. Modified: `app/package.json`
+#### 4. Modified: `package.json`
 
 **Before:**
 ```json
@@ -202,7 +202,7 @@ const nextConfig: NextConfig = {
 
 **To Vercel:**
 ```bash
-git push origin master
+git push origin main
 # Vercel auto-deploys with Node.js runtime
 ```
 
@@ -212,7 +212,7 @@ git push origin master
 sudo apt install nodejs npm
 
 # 2. Upload project files
-scp -r app/ user@server:/var/www/recipe-app/
+scp -r . user@server:/var/www/recipe-app/
 
 # 3. Install dependencies
 ssh user@server
@@ -235,14 +235,13 @@ pm2 startup
 
 **To Vercel:**
 ```bash
-git push origin master
+git push origin main
 # Vercel auto-deploys as static site (same as before!)
 ```
 
 **To Your Server:**
 ```bash
 # 1. Build locally
-cd app
 npm run build
 
 # 2. Upload ONLY the out/ folder
@@ -256,11 +255,10 @@ scp -r out/* user@server:/var/www/html/
 **To GitHub Pages:**
 ```bash
 # Build locally
-cd app
 npm run build
 
 # Deploy
-git subtree push --prefix app/out origin gh-pages
+git subtree push --prefix out origin gh-pages
 ```
 
 **To Any Web Server:**
@@ -360,7 +358,7 @@ git subtree push --prefix app/out origin gh-pages
 
 ### Before (Server-Side)
 ```
-app/.next/
+.next/
 ├── server/
 │   ├── app/
 │   ├── chunks/
@@ -374,7 +372,7 @@ app/.next/
 
 ### After (Static Export)
 ```
-app/out/
+out/
 ├── index.html              (Main page)
 ├── _next/
 │   ├── static/
