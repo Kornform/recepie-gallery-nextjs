@@ -117,7 +117,7 @@ export const RecipeGallery = ({ recipes }: { recipes: RecipeMeta[] }) => {
         <p className="text-sm text-text-secondary">
           {filteredRecipes.length} recipes · {recipes.length} total
         </p>
-        <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 justify-items-center">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 justify-items-center">
           {filteredRecipes.map((recipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} onOpen={setActiveRecipe} />
           ))}
