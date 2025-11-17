@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: rgb(var(--color-border) / 0.08);
+  }
+
+  body {
+    @apply bg-canvas text-text-primary antialiased;
+    font-family: var(--font-sans), Inter, system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: rgb(var(--color-accent) / 0.35);
+    color: rgb(var(--color-text-primary));
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh:*)",
+      "Bash(mv:*)",
+      "Bash(powershell -Command \"Rename-Item -Path ''web'' -NewName ''recepie-gallery-nextjs''\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
