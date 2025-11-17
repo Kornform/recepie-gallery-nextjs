@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -8,6 +9,11 @@ const nextConfig: NextConfig = {
   typescript: {
     // Skip TypeScript check during build (IDE still checks)
     ignoreBuildErrors: true,
+  },
+  experimental: {
+    turbopack: {
+      root: path.resolve(__dirname),
+    },
   },
 };
 
