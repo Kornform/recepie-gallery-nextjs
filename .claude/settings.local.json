@@ -9,7 +9,11 @@
       "Bash(git branch:*)",
       "Bash(git push:*)",
       "Bash(git init:*)",
-      "Bash(git remote add:*)"
+      "Bash(git remote add:*)",
+      "Bash(git rm:*)",
+      "Bash(powershell -Command \"Remove-Item -Path ''app\\.git'' -Recurse -Force\")",
+      "Bash(node scripts/generate-recipes.js:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []

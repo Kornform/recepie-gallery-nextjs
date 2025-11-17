@@ -1,0 +1,612 @@
+[
+  {
+    "id": "all-purpose-sauce",
+    "title": "All Purpose Sauce",
+    "image": "/recipes/rezept-all-purpose-sauce-13x18cm.png",
+    "tags": [
+      "sauce"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "american-pancake",
+    "title": "American Pancake",
+    "image": "/recipes/rezept-american-pancake-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": true,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "baking-basics-1",
+    "title": "Baking Basics 1",
+    "image": "/recipes/rezept-baking-basics-1-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "baking-basics-2",
+    "title": "Baking Basics 2",
+    "image": "/recipes/rezept-baking-basics-2-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "bang-bang-chicken",
+    "title": "Bang Bang Chicken",
+    "image": "/recipes/rezept-bang-bang-chicken-13x18cm.png",
+    "tags": [
+      "chicken"
+    ],
+    "featured": true,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "bruesseler-quark-waffel",
+    "title": "Bruesseler Quark Waffel",
+    "image": "/recipes/rezept-bruesseler-quark-waffel-13x18cm.png",
+    "tags": [
+      "waffle"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "bruesseler-waffel",
+    "title": "Bruesseler Waffel",
+    "image": "/recipes/rezept-bruesseler-waffel-13x18cm.png",
+    "tags": [
+      "waffle"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "chicken-de-la-casa",
+    "title": "Chicken De La Casa",
+    "image": "/recipes/rezept-chicken-de-la-casa-13x18cm.png",
+    "tags": [
+      "chicken"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "chicken-nuggets",
+    "title": "Chicken Nuggets",
+    "image": "/recipes/rezept-chicken-nuggets-13x18cm.png",
+    "tags": [
+      "chicken"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "chicken-shawarma",
+    "title": "Chicken Shawarma",
+    "image": "/recipes/rezept-chicken-shawarma-13x18cm.png",
+    "tags": [
+      "chicken",
+      "protein"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "chili-oil-noodles",
+    "title": "Chili Oil Noodles",
+    "image": "/recipes/rezept-chili-oil-noodles-13x18cm.png",
+    "tags": [
+      "noodles"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "coconut-cookie",
+    "title": "Coconut Cookie",
+    "image": "/recipes/rezept-coconut-cookie-13x18cm.png",
+    "tags": [
+      "sweet"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "cranberry-flapjack",
+    "title": "Cranberry Flapjack",
+    "image": "/recipes/rezept-cranberry-flapjack-13x18cm.png",
+    "tags": [
+      "sweet"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "dan-dan-noodles",
+    "title": "Dan Dan Noodles",
+    "image": "/recipes/rezept-dan-dan-noodles-13x18cm.png",
+    "tags": [
+      "noodles"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "dijon-dill-panko-salmon",
+    "title": "Dijon Dill Panko Salmon",
+    "image": "/recipes/rezept-dijon-dill-panko-salmon-13x18cm.png",
+    "tags": [
+      "salmon"
+    ],
+    "featured": true,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "easy-granola-enery-bars",
+    "title": "Easy Granola Enery Bars",
+    "image": "/recipes/rezept-easy-granola-enery-bars-13x18cm.png",
+    "tags": [
+      "granola",
+      "snack"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "egg-sauces",
+    "title": "Egg Sauces",
+    "image": "/recipes/rezept-egg-sauces-13x18cm.png",
+    "tags": [
+      "sauce"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "erdnuss-porridge",
+    "title": "Erdnuss Porridge",
+    "image": "/recipes/rezept-erdnuss-porridge-13x18cm.png",
+    "tags": [
+      "sweet"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "erdnuss-sosse",
+    "title": "Erdnuss Sosse",
+    "image": "/recipes/rezept-erdnuss-sosse-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "hackfleisch-teigtaschen",
+    "title": "Hackfleisch Teigtaschen",
+    "image": "/recipes/rezept-hackfleisch-teigtaschen-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "haehnchenbrust",
+    "title": "Haehnchenbrust",
+    "image": "/recipes/rezept-haehnchenbrust-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "huenersuppe",
+    "title": "Huenersuppe",
+    "image": "/recipes/rezept-huenersuppe-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "katsu-chicken",
+    "title": "Katsu Chicken",
+    "image": "/recipes/rezept-katsu.chicken-13x18cm.png",
+    "tags": [
+      "chicken"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "kfc-chicken-popcorn",
+    "title": "Kfc Chicken Popcorn",
+    "image": "/recipes/rezept-kfc-chicken-popcorn-13x18cm.png",
+    "tags": [
+      "chicken"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "korean-popcorn-chicken",
+    "title": "Korean Popcorn Chicken",
+    "image": "/recipes/rezept-korean-popcorn-chicken-13x18cm.png",
+    "tags": [
+      "chicken"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "kung-pao-chicken",
+    "title": "Kung Pao Chicken",
+    "image": "/recipes/rezept-kung-pao-chicken-13x18cm.png",
+    "tags": [
+      "chicken"
+    ],
+    "featured": true,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "lachs-rezepte",
+    "title": "Lachs Rezepte",
+    "image": "/recipes/rezept-lachs-rezepte-13x18cm.png",
+    "tags": [
+      "salmon"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "lemon-dijon-salmon",
+    "title": "Lemon Dijon Salmon",
+    "image": "/recipes/rezept-lemon-dijon-salmon-13x18cm.png",
+    "tags": [
+      "salmon"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "lemon-soy-salmon",
+    "title": "Lemon Soy Salmon",
+    "image": "/recipes/rezept-lemon-soy-salmon-13x18cm.png",
+    "tags": [
+      "salmon"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "lo-mein-noodles",
+    "title": "Lo Mein Noodles",
+    "image": "/recipes/rezept-lo-mein-noodles-13x18cm.png",
+    "tags": [
+      "noodles"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "mandel-flapjack",
+    "title": "Mandel Flapjack",
+    "image": "/recipes/rezept-mandel-flapjack-13x18cm.png",
+    "tags": [
+      "sweet"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "mandel-kokos-porridge",
+    "title": "Mandel Kokos Porridge",
+    "image": "/recipes/rezept-mandel-kokos-porridge-13x18cm.png",
+    "tags": [
+      "sweet"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "mandel-rosine-flapjack",
+    "title": "Mandel Rosine Flapjack",
+    "image": "/recipes/rezept-mandel-rosine-flapjack-13x18cm.png",
+    "tags": [
+      "sweet"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "marinaden-anleitung",
+    "title": "Marinaden Anleitung",
+    "image": "/recipes/rezept-marinaden-anleitung-13x18cm.png",
+    "tags": [
+      "sauce"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "marinades-and-rubs",
+    "title": "Marinades And Rubs",
+    "image": "/recipes/rezept-marinades-and-rubs-13x18cm.png",
+    "tags": [
+      "sauce"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "mohn-aprikose-flapjack",
+    "title": "Mohn Aprikose Flapjack",
+    "image": "/recipes/rezept-mohn-aprikose-flapjack-13x18cm.png",
+    "tags": [
+      "sweet"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "nature-valley-granola-bar",
+    "title": "Nature Valley Granola Bar",
+    "image": "/recipes/rezept-nature-valley-granola-bar-13x18cm.png",
+    "tags": [
+      "granola",
+      "snack"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "no-oat-granola-bar",
+    "title": "No Oat Granola Bar",
+    "image": "/recipes/rezept-no-oat-granola-bar-13x18cm.png",
+    "tags": [
+      "granola",
+      "snack"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "optigrill-pizza",
+    "title": "Optigrill Pizza",
+    "image": "/recipes/rezept-optigrill-pizza-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "oreo-mooncake",
+    "title": "Oreo Mooncake",
+    "image": "/recipes/rezept-oreo-mooncake-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "peri-peri-chicken",
+    "title": "Peri Peri Chicken",
+    "image": "/recipes/rezept-peri-peri-chicken-13x18cm.png",
+    "tags": [
+      "chicken"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "peri-peri-salmon",
+    "title": "Peri Peri Salmon",
+    "image": "/recipes/rezept-peri-peri-salmon-13x18cm.png",
+    "tags": [
+      "salmon"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "pochierter-lachs",
+    "title": "Pochierter Lachs",
+    "image": "/recipes/rezept-pochierter-lachs-13x18cm.png",
+    "tags": [
+      "salmon"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "popcorn-chicken",
+    "title": "Popcorn Chicken",
+    "image": "/recipes/rezept-popcorn-chicken-13x18cm.png",
+    "tags": [
+      "chicken"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "quick-cookies",
+    "title": "Quick Cookies",
+    "image": "/recipes/rezept-quick-cookies-13x18cm.png",
+    "tags": [
+      "sweet"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "roasted-potatoes",
+    "title": "Roasted Potatoes",
+    "image": "/recipes/rezept-roasted-potatoes-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "sandwich-sauces",
+    "title": "Sandwich Sauces",
+    "image": "/recipes/rezept-sandwich-sauces-13x18cm.png",
+    "tags": [
+      "sauce"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "sandwiches",
+    "title": "Sandwiches",
+    "image": "/recipes/rezept-sandwiches-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "sauces",
+    "title": "Sauces",
+    "image": "/recipes/rezept-sauces-13x18cm.png",
+    "tags": [
+      "sauce"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "sesame-popcorn-chicken",
+    "title": "Sesame Popcorn Chicken",
+    "image": "/recipes/rezept-sesame-popcorn-chicken-13x18cm.png",
+    "tags": [
+      "chicken"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "soy-sauce-noodles",
+    "title": "Soy Sauce Noodles",
+    "image": "/recipes/rezept-soy-sauce-noodles-13x18cm.png",
+    "tags": [
+      "noodles",
+      "sauce"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "steak",
+    "title": "Steak",
+    "image": "/recipes/rezept-steak-13x18cm.png",
+    "tags": [
+      "protein"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "sweet-sour-chicken-wings",
+    "title": "Sweet Sour Chicken Wings",
+    "image": "/recipes/rezept-sweet-sour-chicken-wings-13x18cm.png",
+    "tags": [
+      "chicken"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "three-ingredient-butter-cookie",
+    "title": "Three Ingredient Butter Cookie",
+    "image": "/recipes/rezept-three-ingredient-butter-cookie-13x18cm.png",
+    "tags": [
+      "sweet"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  },
+  {
+    "id": "tomatensosse",
+    "title": "Tomatensosse",
+    "image": "/recipes/rezept-tomatensosse-13x18cm.png",
+    "tags": [
+      "basics"
+    ],
+    "featured": false,
+    "prepTime": "~15 min",
+    "moodNote": "Add your personal notes here soon."
+  }
+]
