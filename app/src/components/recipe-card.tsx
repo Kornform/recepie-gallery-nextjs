@@ -30,7 +30,7 @@ export const RecipeCard = ({ recipe, onOpen }: Props) => {
     >
       <div className="relative w-full overflow-hidden border-b border-white/5 bg-surface/40 p-2">
         <div className="relative aspect-[148/210] w-full overflow-hidden rounded-[8px] bg-surface/80">
-          <Image src={recipe.image} alt={recipe.title} fill sizes="220px" className="object-contain" />
+          <Image src={recipe.image} alt={recipe.title} fill sizes="220px" className="object-cover" />
         </div>
       </div>
       <div className="flex flex-1 flex-col gap-2 px-3 pb-3 pt-3">
