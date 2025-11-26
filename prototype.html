@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Gallery Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* 
+           THEME CONFIGURATION
+           Uncomment the desired block to switch themes manually.
+        */
+
+        /* --- DARK THEME (Active) --- */
+        :root {
+            --bg-color: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-color: #ffffff;
+            /* Gradient for text readability on top of images */
+            --overlay-gradient: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        /* --- LIGHT THEME (Commented out) --- */
+        /*
+        :root {
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --accent-color: #000000;
+            --overlay-gradient: linear-gradient(to top, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 60%, transparent 100%);
+
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-hover: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        */
+
+        :root {
+            --gap: 1.5rem;
+            --radius: 12px;
+            /* A5 Aspect Ratio */
+            --card-aspect-ratio: 1 / 1.414;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding-bottom: 4rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 4rem 1rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Grid Layout */
+        .gallery-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: var(--gap);
+        }
+
+        /* Recipe Card */
+        .recipe-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            aspect-ratio: var(--card-aspect-ratio);
+            background-color: var(--card-bg);
+        }
+
+        /* Minimal lift effect */
+        .recipe-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Image */
+        .image-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .recipe-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Overlay Content */
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--overlay-gradient);
+            padding: 4rem 1.25rem 1.25rem;
+            /* Top padding ensures gradient fades nicely */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            pointer-events: none;
+            /* Let clicks pass through to card */
+        }
+
+        .recipe-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            background: var(--text-main);
+            color: var(--bg-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            opacity: 0.9;
+        }
+
+        .recipe-title {
+            font-size: 1.4rem;
+            line-height: 1.2;
+            color: var(--text-main);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .gallery-container {
+                padding: 0 1rem;
+                gap: 1rem;
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .recipe-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Recipe Collection</h1>
+        <p>Curated recipes for your kitchen.</p>
+    </header>
+
+    <div class="gallery-container">
+
+        <!-- Card 1 -->
+        <article class="recipe-card">
+            <div class="image-wrapper">
+                <img src="public/recipes/rezept-american-pancake-13x18cm.png" alt="American Pancake" class="recipe-image">
+                <div class="card-overlay">
+                    <div class="recipe-tags">
+                        <span class="tag">Basics</span>
+                    </div>
+                    <h3 class="recipe-title">American Pancake</h3>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="recipe-card">
+            <div class="image-wrapper">
+                <img src="public/recipes/rezept-bang-bang-chicken-13x18cm.png" alt="Bang Bang Chicken" class="recipe-image">
+                <div class="card-overlay">
+                    <div class="recipe-tags">
+                        <span class="tag">Chicken</span>
+                    </div>
+                    <h3 class="recipe-title">Bang Bang Chicken</h3>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="recipe-card">
+            <div class="image-wrapper">
+                <img src="public/recipes/rezept-dijon-dill-panko-salmon-13x18cm.png" alt="Dijon Dill Salmon"
+                    class="recipe-image">
+                <div class="card-overlay">
+                    <div class="recipe-tags">
+                        <span class="tag">Salmon</span>
+                        <span class="tag">Healthy</span>
+                    </div>
+                    <h3 class="recipe-title">Dijon Dill Panko Salmon</h3>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="recipe-card">
+            <div class="image-wrapper">
+                <img src="public/recipes/rezept-kung-pao-chicken-13x18cm.png" alt="Kung Pao Chicken" class="recipe-image">
+                <div class="card-overlay">
+                    <div class="recipe-tags">
+                        <span class="tag">Chicken</span>
+                        <span class="tag">Spicy</span>
+                    </div>
+                    <h3 class="recipe-title">Kung Pao Chicken</h3>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="recipe-card">
+            <div class="image-wrapper">
+                <img src="public/recipes/rezept-chili-oil-noodles-13x18cm.png" alt="Chili Oil Noodles" class="recipe-image">
+                <div class="card-overlay">
+                    <div class="recipe-tags">
+                        <span class="tag">Noodles</span>
+                        <span class="tag">Spicy</span>
+                    </div>
+                    <h3 class="recipe-title">Chili Oil Noodles</h3>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="recipe-card">
+            <div class="image-wrapper">
+                <img src="public/recipes/rezept-oreo-mooncake-13x18cm.png" alt="Oreo Mooncake" class="recipe-image">
+                <div class="card-overlay">
+                    <div class="recipe-tags">
+                        <span class="tag">Basics</span>
+                        <span class="tag">Sweet</span>
+                    </div>
+                    <h3 class="recipe-title">Oreo Mooncake</h3>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="recipe-card">
+            <div class="image-wrapper">
+                <img src="public/recipes/rezept-steak-13x18cm.png" alt="Steak" class="recipe-image">
+                <div class="card-overlay">
+                    <div class="recipe-tags">
+                        <span class="tag">Protein</span>
+                    </div>
+                    <h3 class="recipe-title">Perfect Steak</h3>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="recipe-card">
+            <div class="image-wrapper">
+                <img src="public/recipes/rezept-lemon-soy-salmon-13x18cm.png" alt="Lemon Soy Salmon" class="recipe-image">
+                <div class="card-overlay">
+                    <div class="recipe-tags">
+                        <span class="tag">Salmon</span>
+                    </div>
+                    <h3 class="recipe-title">Lemon Soy Salmon</h3>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+</body>
+
+</html>
